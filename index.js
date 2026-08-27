@@ -1,33 +1,30 @@
-let Historico = TotalPartidas(5600, 100);
-let Lvl = " ";
+class Heroi {
+    constructor(nome, idade, tipo) {
+        this.nome = nome;
+        this.idade = idade;
+        this.tipo = tipo;
+    }
+    atacar() {
 
-if (Historico < 10) {
-    Lvl = "Ferro";
+        let ataque;
 
-} else if (Historico <= 20) {
-    Lvl = "Bronze";
-
-} else if (Historico <= 50) {
-    Lvl = "Prata";
-
-} else if (Historico <= 80) {
-    Lvl = "Ouro";
-
-} else if (Historico <= 90) {
-    Lvl = "Diamante";
-
-} else if (Historico <= 100) {
-    Lvl = "Lendário";
-
-} else {
-    Lvl = "Imortal"
-};
-
-console.log("O Herói tem de saldo de " + Historico + ", está no nível de " + Lvl);
-
-function TotalPartidas(Vitorias, Derrotas) {
-    let SaldoVitorias = (Vitorias - Derrotas);
-    return SaldoVitorias;
+        if (this.tipo == "mago") {
+            ataque = "magia"
+        } else if (this.tipo == "guerreiro") {
+            ataque = "espada"
+        } else if (this.tipo == "monge") {
+            ataque = "artes marciais"
+        } else if (this.tipo == "ninja") {
+            ataque = "shuriken"
+        }
+        console.log("O " + this.tipo + " atacou usando " + ataque);
+    }
 }
 
+let heroi1 = new Heroi("DavyJones", 68, "mago");
+let heroi2 = new Heroi("Entidade", 21, "monge");
+let heroi3 = new Heroi("Jotinha", 17, "ninja");
 
+heroi1.atacar();
+heroi2.atacar();
+heroi3.atacar();
